@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    slist = list(my_string)
-    for i in range(len(slist)):
-        if slist[i] is 'C' or slist[i] is 'c':
-            del slist[i]
+    new_str = list(my_string)
+    for i, v in enumerate(new_str):
+        if v is 'C' or v is 'c':
+            del new_str[i]
+    return "".join(new_str)
