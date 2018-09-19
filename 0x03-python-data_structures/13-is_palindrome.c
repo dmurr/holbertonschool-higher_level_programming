@@ -49,7 +49,7 @@ int is_palindrome(listint_t **head)
 		last += 1;
 		temp = temp->next;
 	}
-	for (; first > last; first++, last--)
+	for (; first < last; first++, last--)
 	{
 		if (value_at_index(*head, first) != value_at_index(*head, last))
 		{
