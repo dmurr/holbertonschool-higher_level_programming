@@ -4,11 +4,9 @@ def print_matrix_integer(matrix=[[]]):
         return None
 
     for row in matrix:
-        pos = 0
-        for i in row:
-            if pos == len(row) - 1:
-                print("{:d}".format(i), end="")
+        for i, v in enumerate(row):
+            if i == len(row) - 1:
+                print("{:d}".format(v), end="")
             else:
-                print("{:d}".format(i), end=" ")
-            pos += 1
+                print("{:d}".format(v), end=" ")
         print()
