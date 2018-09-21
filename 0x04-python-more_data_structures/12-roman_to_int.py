@@ -1,13 +1,22 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    answer = 0
-    rom = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
+    total = 0
+    numerals = {'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000}
 
     if roman_string is None:
         return 0
+    temp = []
+    for letter in list(roman_string):
+        for k, v in numerals.items():
+            if letter == k:
+                temp.append(v)
 
-    for i in list(roman_string):
-        for k, v in rom.items():
-            if i == k:
-                answer += v
-    return answer
+    for i, x in enumerate(temp):
+        if i == len(temp) - 1:
+            total += x
+        elif x >= temp[i + 1]:
+            total += x
+        else:
+            total -= x
+
+    return total
