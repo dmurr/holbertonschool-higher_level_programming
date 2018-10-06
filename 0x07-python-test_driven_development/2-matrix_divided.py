@@ -1,10 +1,13 @@
 #!/usr/bin/python3
 """
 Module contains matrix_dividend function
-
 """
+
+
 def matrix_divided(matrix, div):
-    """ Divide Matrix """
+    """
+    Divide Matrix
+    """
     list_lengths = []
 
     if div == 0:
@@ -22,7 +25,3 @@ def matrix_divided(matrix, div):
                 raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     return [[round(i / div, 2) for i in row] for row in matrix]
-
-if __name__ == "__main__":
-    import doctest
-    doctest.tesmod()
