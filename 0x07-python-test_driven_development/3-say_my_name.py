@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
 Module contains say_my_name function
-
 """
+
+
 def say_my_name(first_name, last_name=""):
     """ Function prints greeting with first and last name """
 
