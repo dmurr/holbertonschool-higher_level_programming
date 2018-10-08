@@ -4,16 +4,13 @@
 ####
 ####
 ####
->>> try:
-...	print_square()
-... except Exception as e:
-... 	print(e)
-size must be an integer >= 0
+
 >>> try:
 ...     print_square(-1.1)
 ... except Exception as e:
 ...        print(e)
 size must be an integer
+
 >>> try:
 ...	print_square(-1)
 ... except Exception as e:
@@ -26,3 +23,7 @@ size must be >= 0
 ... except Exception as e:
 ...        print(e)
 size must be an integer
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
