@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
 Module contains print_square function
-
-
 """
+
+
 def print_square(size):
     """ print_square function """
 
