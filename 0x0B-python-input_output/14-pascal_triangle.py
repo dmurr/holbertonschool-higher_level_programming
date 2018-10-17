@@ -10,6 +10,10 @@ def pascal_triangle(n):
         return []
 
     pascal = [[1]]
+
+    if n == 1:
+        return pascal
+
     for i, row in enumerate(pascal):
         temp_list = []
         for j, num in enumerate(row):
