@@ -23,5 +23,5 @@ def pascal_triangle(n):
         ready.append(1)
         pascal.append(ready)
 
-        if i == (n - 1):
+        if i == (n - 2):
             return pascal
