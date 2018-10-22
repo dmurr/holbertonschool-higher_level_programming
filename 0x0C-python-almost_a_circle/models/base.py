@@ -46,6 +46,5 @@ class Base:
             j = []
             for i in list_objs:
                 j.append(i.to_dictionary())
-            j = cls.to_json_string(j)
             with open(f, mode="w", encoding='utf-8') as wtf:
-                wtf.write(j)
+                wtf.write(cls.to_json_string(j))
