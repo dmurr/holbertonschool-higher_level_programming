@@ -39,7 +39,7 @@ class Base:
         Returns:
         """
         f = "{}.json".format(cls.__name__)
-        if list_objs is None or list_objs is "":
+        if list_objs is None:
             with open(f, mode="w", encodings='utf-8') as wtf:
                 wtf.write("[]")
         else:
