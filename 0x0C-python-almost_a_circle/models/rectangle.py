@@ -73,9 +73,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """ area """
         return self.width * self.height
 
     def display(self):
+        """ displays rectangle """
         for c in range(self.y):
             print("")
         for a in range(self.height):
@@ -90,11 +92,13 @@ class Rectangle(Base):
                     print("#")
 
     def __str__(self):
+        """ string representation of object """
         return ("[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.width, self.height))
 
     def update(self, *args, **kwargs):
+        """ update object attribute values """
         if args:
             for i, k in enumerate(args):
                 if i == 0:
@@ -121,6 +125,7 @@ class Rectangle(Base):
                     self.__y = v
 
     def to_dictionary(self):
+        """ convert to dictionary """
         d = {}
         d["id"] = self.id
         d["width"] = self.__width
