@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Contains Base class
+Base class
 """
 import json
 
@@ -10,7 +10,7 @@ class Base:
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """ if id is given sets instance id to id, else, id = nb_obj + 1 """
+        """ if id is given sets instance id else increase obj """
         if id is not None:
             self.id = id
         else:
@@ -22,7 +22,7 @@ class Base:
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
-            return str(list_dictionaries)
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
