@@ -39,12 +39,11 @@ class Base:
         Returns:
         """
         f = "{}.json".format(cls.__name__)
-        if list_objs is None:
-            with open(f, mode="w", encodings='utf-8') as wtf:
+        with open(f, mode="w", encoding='utf-8') as wtf:
+            if list_objs is None:
                 wtf.write("[]")
-        else:
-            j = []
-            for i in list_objs:
-                j.append(i.to_dictionary())
-            with open(f, mode="w", encoding='utf-8') as wtf:
+            else:
+                j = []
+                for i in list_objs:
+                    j.append(i.to_dictionary())
                 wtf.write(cls.to_json_string(j))
