@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+"""
+Contains Base class
+"""
+import json
+
+
+class Base:
+    """ Base class"""
+    __nb_objects = 0
+
+    def __init__(self, id=None):
+        """ if id is given sets instance id to id, else, id = nb_obj + 1 """
+        if id is not None:
+            self.id = id
+        else:
+            Base.__nb_objects += 1
+            self.id = self.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        if list_dictionaries is None or not list_dictionaries:
+            return "[]"
+        else:
+            return str(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        data = Base.to_json_string(list_objs)
+        with open("{}.json".format(cls.__name__), "w") as wtf:
+            json.dump(data, wtf)
