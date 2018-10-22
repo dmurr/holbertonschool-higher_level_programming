@@ -42,14 +42,7 @@ class Square(Rectangle):
                     self.y = k
         else:
             for k, v in kwargs.items():
-                if k == 'id':
-                    self.id = v
-                elif k == 'size':
-                    self._size = v
-                elif k == 'x':
-                    self.x = v
-                elif k == 'y':
-                    self.y = v
+                self.__setattr__(k, v)
 
     def to_dictionary(self):
         """ dictionary representation of attributes """
