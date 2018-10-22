@@ -19,6 +19,12 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """ to_json_string:
+        Args:
+
+        Return:
+
+        """
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
@@ -26,5 +32,20 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        with open("{}.json".format(cls.__name__), "w") as wtf:
-            json.dump(cls.to_json_string(list_objs), wtf)
+        """ save_to_file:
+
+        Args:
+
+        Returns:
+        """
+        f = "{}.json".format(cls.__name__)
+        if list_objs is None or list_objs is "":
+            with open(f, mode="w", encodings='utf-8') as wtf:
+                wtf.write("[]")
+        else:
+            j = []
+            for i in list_objs:
+                j.append(i.to_dictionary())
+            j = cls.to_json_string(j)
+            with open(f, mode="w", encoding='utf-8') as wtf:
+                wtf.write(j)
