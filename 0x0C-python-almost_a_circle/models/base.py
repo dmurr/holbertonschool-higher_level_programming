@@ -32,7 +32,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save_to_file: writes the JSON string
+        """save_to_file: writes the json string
         representation of list_objs to a file
         Args:
             cls: the class
@@ -60,20 +60,20 @@ class Base:
             return []
         return json.loads(json_string)
 
-        @classmethod
-        def create(cls, **dictionary):
-            """create classmethod: Dictionary to Instance
-            Args:
-            cls: the class itself
-            dictionary: double pointer to a dictionary
-            Return: an instance with all attributes already set
-            """
-            if cls.__name__ == "Rectangle":
-                new = cls(1, 1)
-            if cls.__name__ == "Square":
-                new = cls(1)
-            new.update(**dictionary)
-            return new
+    @classmethod
+    def create(cls, **dictionary):
+        """create classmethod: Dictionary to Instance
+        Args:
+        cls: the class
+        dictionary: double pointer to a dictionary
+        Return: an instance with attributes set
+        """
+        if cls.__name__ == "Rectangle":
+            new = cls(1, 1)
+        if cls.__name__ == "Square":
+            new = cls(1)
+        new.update(**dictionary)
+        return new
 
     @classmethod
     def load_from_file(cls):
