@@ -2,11 +2,10 @@
 """ Lists all states with name starting with N from hbtn_0e_0_usa
 """
 
-import sys
-import MySQLdb
-
 if __name__ == "__main__":
-    args = sys.argv
+    import MySQLdb
+    from sys import argv
+
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
