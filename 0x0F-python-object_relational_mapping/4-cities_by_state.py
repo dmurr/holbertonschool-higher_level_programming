@@ -2,17 +2,16 @@
 """ Lists all cities from the database hbtn_0e_4_usa
 """
 
-import sys
-import MySQLdb
-
 if __name__ == "__main__":
-    args = sys.argv
+    import MySQLdb
+    from sys import argv
+
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=args[1],
-        password=args[2],
-        db=args[3]
+        user=argv[1],
+        password=argv[2],
+        db=argv[3]
         )
 
     cur = db.cursor()
