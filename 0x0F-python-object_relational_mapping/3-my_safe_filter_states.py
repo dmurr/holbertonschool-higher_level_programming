@@ -2,7 +2,6 @@
 """ Prevents SQL injections
 """
 
-
 if __name__ == "__main__":
     import MySQLdb
     from sys import argv
@@ -17,10 +16,10 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '{:s}' \
-    ORDER BY states.id ASC".format(argv[4],))
+    cur.execute("""SELECT * FROM states WHERE name = %s
+    ORDER BY states.id ASC""", (argv[4],))
 
     for row in cur.fetchall():
-        print("({}, '{}')".format(row[0], row[1]))
+        print(row)
     cur.close()
     db.close()
