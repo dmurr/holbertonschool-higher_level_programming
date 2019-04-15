@@ -9,4 +9,3 @@ if __name__ == "__main__":
         info = response.info()
 
     print(info['X-Request-Id'])
-
